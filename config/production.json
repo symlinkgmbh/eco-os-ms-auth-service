@@ -1,0 +1,12 @@
+{
+  "environment": "production",
+  "version": "0.0.1",
+  "buildDate": "NOW",
+  "buildSHA": "4-8-15-16-23-42",
+  "name": "eco-os-auth-service",
+  "serviceId": "014",
+  "server": {
+    "port": "8005"
+  },
+  "logVerbose": true
+}
