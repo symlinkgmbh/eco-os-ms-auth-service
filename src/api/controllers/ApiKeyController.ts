@@ -18,7 +18,7 @@
 
 
 import { IAuthentication, AUTHENTICATION_TYPES, authenticationContainer } from "../../infrastructure/authentication";
-import { CustomRestError } from "@symlinkde/eco-os-pk-api";
+import { CustomRestError, apiResponseCodes } from "@symlinkde/eco-os-pk-api";
 import { Request } from "express";
 import { Log, LogLevel } from "@symlinkde/eco-os-pk-log";
 
@@ -35,8 +35,8 @@ export class ApiKeyController {
       if (!hasAccess) {
         throw new CustomRestError(
           {
-            code: 401,
-            message: "api key is not valid",
+            code: apiResponseCodes.C848.code,
+            message: apiResponseCodes.C848.message,
           },
           401,
         );
@@ -47,8 +47,8 @@ export class ApiKeyController {
       Log.log(err, LogLevel.error);
       throw new CustomRestError(
         {
-          code: 401,
-          message: "can't auth by token",
+          code: apiResponseCodes.C849.code,
+          message: apiResponseCodes.C849.message,
         },
         401,
       );
